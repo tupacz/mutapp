@@ -1,11 +1,9 @@
 const express = require('express');
 const mutantApi = require('./routes/mutantApi.js');
-const indexRouter = require('./routes/index.js');
 const app = express();
 
 app.use(express.json());
 
-app.use("/", indexRouter);
 app.use("/mutant", mutantApi);
 
 app.use((req,res,next)=> {
