@@ -33,7 +33,7 @@ La comunicación con la aplicación se hace mediante llamadas REST, por lo cual 
 
 La aplicación recibe un array de strings que representa una secuencia genética en forma de tabla.
 
-### Tener cuenta
+### Tener en cuenta
 - El array enviado debe llamarse **"dna"**.
 - La tabla tiene que tener dimensiones NxN, es decir, **misma altura y mismo ancho**.
 - Las letras enviadas solo pueden ser A, T, C y G. En **mayúsculas**.
