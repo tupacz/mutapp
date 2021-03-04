@@ -5,10 +5,10 @@ exports.getStats = async function () {
         GeneticSequence.countDocuments({ isMutant: true }),
         GeneticSequence.countDocuments({ isMutant: false })
     ]);
-    
+
     return {
         count_mutant_dna: totalMutants,
         count_human_dna: totalHumans,
-        ratio: totalMutants/totalHumans
-    }
+        ratio: totalHumans !== 0 ? totalMutants/totalHumans : 0
+    };
 }

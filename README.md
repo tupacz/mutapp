@@ -28,7 +28,7 @@ npm start
 Si recibís el mensaje "Escuchando en puerto 3000", está todo listo.
 
 
-## Verificación de secuencia mutante
+## Verificación de secuencia genética mutante
 La comunicación con la aplicación se hace mediante llamadas REST, por lo cual es recomendable tener a mano [Postman](https://www.postman.com/), [Insomnia](https://insomnia.rest/), o cualquier cliente REST que te guste.
 
 La aplicación recibe un array de strings que representa una secuencia genética en forma de tabla.
@@ -72,17 +72,29 @@ Se envía la secuencia con un HTTP POST, a la dirección `localhost:3000/mutant`
     ]
 }
 ```
+## Servicio de Estadísticas
+A la aplicación también se le pueden consultar estadísticas para obtener valores globales de las secuencias genéticas ingresadas. Se hace una llamada GET a `localhost:3000/stats`, obteniendo una respuesta similar a la siguiente:
+```yaml
+{
+    "count_mutant_dna": 40, //total de ADNs verificadas como mutantes
+    "count_human_dna": 100, //total de ADNs verificadas como humanos
+    "ratio": 0.4 // cuántos mutantes por humano hay verificados
+}
+```
+
 ## Live server
 
-El servicio está hosteado en Azure, y se puede usar con las siguientes direcciónes:
-- Verificación mutante con POST: `https://mutants-app.azurewebsites.net/mutant` - [Modo de uso](#Verificación-de-secuencia-mutante)
+El servicio está hosteado en Azure, y se puede usar con las siguientes URLs:
+- Verificación mutante con POST: `https://mutapp.azurewebsites.net/mutant` - [Modo de uso](#Verificación-de-secuencia-genética-mutante)
+- Stats: `https://mutapp.azurewebsites.net/stats` - [Modo de uso](#Servicio-de-Estadísticas)
 
 ## Built With
 
 * [Node.js](http://www.dropwizard.io/1.0.2/docs/)
 * [Express](https://maven.apache.org/)
 * [MongoDB](https://www.mongodb.com/) & [Mongoose](https://mongoosejs.com/)
-* Agradecimientos a [JSBench.me](https://jsbench.me/) por testear la velocidad de los métodos.
+
+Agradecimientos a [JSBench.me](https://jsbench.me/) por los stress test en los métodos.
 
 ## Autor
 
