@@ -5,11 +5,11 @@ const router = express.Router();
 
 router.post("/", async function (req, res, next) {
     try{
-        const isMutantResult = await MutantService.newSequence(req.body.dna);
-        if (isMutantResult) {
+        const isMutantResult = await MutantService.checkValidityAndAdd(req.body.dna);
+        if (isMutantResult.isMutant) {
             res.status(200).json(isMutantResult);
         } else {
-            res.status(403).send(isMutantResult);
+            res.status(403).json(isMutantResult);
         }
     } catch (err) {
         next(err);
