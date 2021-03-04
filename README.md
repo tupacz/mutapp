@@ -81,6 +81,8 @@ El servicio está hosteado en Azure, y se puede usar con las siguientes direcci�
 
 * [Node.js](http://www.dropwizard.io/1.0.2/docs/)
 * [Express](https://maven.apache.org/)
+* [MongoDB](https://www.mongodb.com/) & [Mongoose](https://mongoosejs.com/)
+* Agradecimientos a [JSBench.me](https://jsbench.me/) por testear la velocidad de los métodos.
 
 ## Autor
 

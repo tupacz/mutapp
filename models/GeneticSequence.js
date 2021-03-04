@@ -1,7 +1,9 @@
-class GeneticSequence {
-    constructor (geneticArray) {
-        this.geneticArray = geneticArray;
-    }
-}
+const mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 
-module.exports = GeneticSequence;
+let GeneticSequence = new Schema({
+    geneticArray: [],
+    isMutant: Boolean
+});
+
+module.exports = mongoose.model('geneticsequence', GeneticSequence);
