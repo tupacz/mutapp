@@ -1,4 +1,4 @@
-# Mutant App
+# MutApp
 
 Este proyecto se hizo para Magneto, quien lo usa para reclutar mutantes alrededor del mundo. Ellos envían su secuencia genética y con esta aplicación detectamos si son mutantes o simples humanos.
 
@@ -12,7 +12,6 @@ node -v
 También cloná este repositorio en un directorio local.
 ```
 git clone https://github.com/tupacz/mutant-app.git
-cd ./mutant-app
 ```
 
 Una vez que los archivos hayan descargado, abrí una terminal en la carpeta donde iniciaste el repositorio e instalá las dependencias con este comando:
@@ -81,21 +80,22 @@ A la aplicación también se le pueden consultar estadísticas para obtener valo
     "ratio": 0.4 // cuántos mutantes por humano hay verificados
 }
 ```
-
+## Unit Tests
+La aplicación cuenta con 28 tests unitarios, los cuáles se corren con 
+```
+npm run test
+```
+7 de los tests se corren sobre las llamadas rests, así que es necesario tener la aplicación corriendo para que no fallen.
 ## Live server
-
-El servicio está hosteado en Azure, y se puede usar con las siguientes URLs:
+El servicio está hosteado en Azure, y se puede usar con las siguientes URLs
 - Verificación mutante con POST: `https://mutapp.azurewebsites.net/mutant` - [Modo de uso](#Verificación-de-secuencia-genética-mutante)
 - Stats: `https://mutapp.azurewebsites.net/stats` - [Modo de uso](#Servicio-de-Estadísticas)
 
-## Built With
+## Hecho con
 
 * [Node.js](http://www.dropwizard.io/1.0.2/docs/)
 * [Express](https://maven.apache.org/)
 * [MongoDB](https://www.mongodb.com/) & [Mongoose](https://mongoosejs.com/)
+* [Mocha](https://mochajs.org/) & [Nodemon](https://nodemon.io/) para test y desarrollo
+* [JSBench.me](https://jsbench.me/) para los stress tests.
 
-Agradecimientos a [JSBench.me](https://jsbench.me/) por los stress test en los métodos.
-
-## Autor
-
-* **Tupac Zuleta**
